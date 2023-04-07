@@ -2,17 +2,6 @@
 #include <iostream>
 using namespace std;
 
-char name[32];
-unsigned int age = 0;
-unsigned int zipcode = 0;
-float wage = 0;
-unsigned int daysWorked = 0;
-int hoursWorkedPerDay[7];
-int tax = 0.1f;
-int totalHours = 0;
-float gIncome = 0;
-float nIncome = 0;
-
 Employee::Employee() {
 	// put constructor code here
 }
