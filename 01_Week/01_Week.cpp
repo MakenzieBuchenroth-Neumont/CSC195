@@ -6,7 +6,7 @@
 int main()
 {
     std::cout << "01_week Hello World!\n";
-    std::cout << "Git: "
+    std::cout << "Git: ";
 
     int iVal1 = -1;
     int iVal3 = 42;
@@ -31,6 +31,16 @@ int main()
     std::cout << "\nsize of iPtr = " << sizeof(iPtr);
     std::cout << "\nvalue iPtr points to is " << *(iPtr + 8);
 
+    // Heap memory
+    char* chTemp = NULL;
+    chTemp = (char*)malloc(20);
+    memset(chTemp, '\0', 20);
+    memset(chTemp, 0, 20);
+    // Do stuff with memory, then
+    free(chTemp);
+    chTemp = NULL; // Good practice
+
+    std::cout << "\n\n End of Program ";
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
