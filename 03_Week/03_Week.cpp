@@ -2,6 +2,9 @@
 //
 
 #include <iostream>
+#include "myDereived.h"
+
+using namespace std;
 
 int main()
 {
@@ -11,6 +14,10 @@ int main()
     int* intPtr = &myInt; // Pointer to an int
     int& intRef = myInt; // Reference to an int
 
+    myBase base;
+    myDereived derived;
+
+    cout << "\n addSomething() = " << derived.addSomething(1) << "\n";
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

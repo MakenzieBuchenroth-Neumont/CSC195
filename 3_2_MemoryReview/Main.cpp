@@ -72,12 +72,13 @@ int main()
 	cout << "\nInitial value of ptr = " << *intPtr;
 		// call the Double function with the pointer created in the POINTER VARIABLE section
 	Double(intPtr);
-	//Double(&myInt);
-	cout << "\nAfter double value is = " << *intPtr;
-	cout << "\nAfter double value is = (ref)" << iRef;
 		// output the dereference pointer
+	cout << "\nAfter double value is = " << *intPtr;
 		// output the int variable created in the REFERENCE section
+	cout << "\n" << myInt;
 		// did the int variable's value change when using the pointer?
+			// NO
+		// 
 		// ** ALLOCATION/DEALLOCATION **
 		//
 		// create an int pointer that points at an int allocated on the heap, set the allocated int value to some number

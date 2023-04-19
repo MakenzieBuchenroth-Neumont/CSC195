@@ -14,7 +14,8 @@ public:
 	float nIncome = 0;
 
 public:
-	Employee();
+	Employee(); // Constructor
+	//~Employee(); // Destructor
 	void Read();
 	void Write();
 };
