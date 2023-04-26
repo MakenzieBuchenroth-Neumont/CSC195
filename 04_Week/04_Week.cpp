@@ -12,21 +12,28 @@ int main()
     myInput input;
     std::unique_ptr<Animal> animal;
     Database db;
+    int iType = 0;
+    string sInput = "";
 
     std::cout << "04_Week Hello World!\n";
 
     int iMenu = 0;
 
-    while (iMenu != 6) {
+    while (iMenu != 8) {
         cout << "\nEnter a menu option: ";
         cout << "\n1) Add an animal";
         cout << "\n2) Display all animals";
-        cout << "\n6) Quit\n";
+        cout << "\n3) Display by name";
+        cout << "\n4) Display by type";
+        cout << "\n5) Remove all";
+        cout << "\n6) Load from file";
+        cout << "\n7) Save to file";
+        cout << "\n8) Quit\n";
 
-        iMenu = input.getUserInt(1, 6);
+        iMenu = input.getUserInt(1, 8);
         switch (iMenu) {
         case 1:
-            int iType = 0;
+            iType = 0;
             cout << "\n1) Fish";
             cout << "\n2) Bird";
             iType = input.getUserInt(1, 2);
@@ -42,11 +49,41 @@ int main()
             db.add(animal);
             break;
         case 2:
-
+            db.displayAll(cout);
             break;
-        } // Outer switch
-    } // While 
-}
+        case 3:
+            sInput = input.getUserString("\nEnter a value: ");
+            // Pass name and cout to getByName();
+            db.getByName(cout, cin, sInput);
+            break;
+        case 4:
+            // Prompt user for type
+            // iType = 0;
+            cout << "\n1) Fish";
+            cout << "\n2) Bird";
+            iType = input.getUserInt(1, 2);
+            switch (iType) {
+            case 1:
+
+                break;
+            case 2:
+
+                break;
+                // Pass name and cout to getByType();
+                break;
+            }
+          case 5:
+
+              break;
+          case 6:
+
+              break;
+          case 7:
+              db.save(db.filename);
+              break;
+            } // Outer switch
+        } // While 
+    }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
 // Debug program: F5 or Debug > Start Debugging menu

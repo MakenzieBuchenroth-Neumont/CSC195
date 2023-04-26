@@ -20,3 +20,21 @@ int myInput::getUserInt(string prompt, unsigned short low, unsigned short high) 
 int myInput::getUserInt(unsigned short low, unsigned short high) {
 	return getUserInt("", low, high);
 }
+
+
+string myInput::getUserString(string prompt) {
+	string sTemp = "";
+	do {
+		sTemp = "";
+		cout << prompt;
+		cout << "\nEnter the name to sort by: ";
+		cin >> sTemp;
+
+		if (!cin.good()) {
+			cin.clear();
+			cin.ignore();
+			cout << "\nImproper input!!";
+		}
+		return sTemp;
+	} while (sTemp == "");
+}
