@@ -1,4 +1,9 @@
 #include "Database.h"
+#include "myInput.h"
+#include "Animal.h"
+
+int iType = 0;
+myInput input;
 
 std::unique_ptr<Animal> Database::create(Animal::eType type) {
 	Animal* animal = nullptr;
@@ -32,8 +37,15 @@ void Database::getByName(std::ostream& ostr, istream& istr, string sInput) {
 	}
 }
 
-void Database::sortByType(std::ostream& ostr, istream& istr) {
-	
+void Database::sortByType(std::ostream& ostr, istream& istr) {\
+	cout << "\n1) Fish";
+	cout << "\n2) Bird";
+	iType = input.getUserInt(1, 2);
+	for(std::unique_ptr<Animal>& animal : this->animal) {
+		if ((int)animal->getType() == iType) {
+			animal->write(ostr);
+		}
+	}
 }
 
 void Database::save(const string filename) {
@@ -65,4 +77,8 @@ void Database::load(const string& filename) {
 	if (output.is_open()) {
 		output.close();
 	}
+}
+
+void Database::removeAll() {
+		this->animal.clear();
 }

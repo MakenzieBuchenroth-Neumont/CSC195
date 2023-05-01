@@ -58,22 +58,10 @@ int main()
             break;
         case 4:
             // Prompt user for type
-            // iType = 0;
-            cout << "\n1) Fish";
-            cout << "\n2) Bird";
-            iType = input.getUserInt(1, 2);
-            switch (iType) {
-            case 1:
-
+            db.sortByType(cout, cin);
                 break;
-            case 2:
-
-                break;
-                // Pass name and cout to getByType();
-                break;
-            }
           case 5:
-
+              db.removeAll();
               break;
           case 6:
 

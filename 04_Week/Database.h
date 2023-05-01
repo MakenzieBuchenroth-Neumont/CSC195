@@ -18,5 +18,6 @@ public:
 	void sortByType(std::ostream& ostr, istream& istr);
 	void save(const string filename);
 	void load(const string& filename);
+	void removeAll();
 };
 
